@@ -1,7 +1,0 @@
-C:\Users\Kerim\source\repos\12a\12a\obj\Debug\12a.csproj.AssemblyReference.cache
-C:\Users\Kerim\source\repos\12a\12a\obj\Debug\12a.csproj.CoreCompileInputs.cache
-C:\Users\Kerim\source\repos\12a\12a\bin\Debug\12a.exe.config
-C:\Users\Kerim\source\repos\12a\12a\bin\Debug\12a.exe
-C:\Users\Kerim\source\repos\12a\12a\bin\Debug\12a.pdb
-C:\Users\Kerim\source\repos\12a\12a\obj\Debug\12a.exe
-C:\Users\Kerim\source\repos\12a\12a\obj\Debug\12a.pdb
