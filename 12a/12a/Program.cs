@@ -679,8 +679,45 @@ namespace _12a
 
             //Console.WriteLine(sayix % sayiy);
 
+            /*
+             * değişken isimlendirme kuralları
+             * 
+             * degisken sayıyla başlayamaz
+             * degisken eğer birden fazla kelimeden oluşuyorsa veya kelimenın harflerinin arasında
+             * herhangi bir boşuk ifadesi konulamaz
+             * Programlama dilindeki özel kelimeler degisken ismi olarak
+             * adlandırılamaz bunlar örenk olarak if,else,for,while gibi kelimeler
+             * örnek verilebilir. Bu tarz kelimeler dehisken ismi
+             * olarak asla görülemez. for diye bulumaz ancak for2 gibi bir kullanım
+             * özel bir anahtar kelimeye denk gelmediğinden kullanılabilir.
+             * 
+             * geçerli bir değişken adlandırmasına örnek =    ogrenciNumarasi
+             * geçersiz bir değişken adlandırmasına örnek = 12öğrenciAdı 
+             * 
+             */
 
 
+            /* 
+             * degisken tanımlama tekrar
+             * 
+             * eğer sayısal (tamsayi bir değişken tanımlanması isteniyorsa örnek bir alt satırdaki gibi olmalıdır.
+             * 
+             * int ogrenciNumarasi= 14321 ;
+             * 
+             * eğer Metin karakterleri içeren bir değişken tanımlanması isteniyorsa örnek bir alt satırdaki gbi olmalıdır.
+             * 
+             * string gunlukGorevler = " Bugun ders çalışılacak" ;
+             * 
+             * eğer tek bir karakter içeren değişken tanımlanması isteniyorsa örnek bir alt satırdaki gibidir.
+             * 
+             * char karakter = ' A ' ;
+             * 
+             * eğer ondalıklı bir sayı değeri tutan değişken oluşturulması isteniyorsa örnek bir alt satırdaki gibi olmalıdır.
+             * 
+             * double meyveFiyatı= 12.53 ;
+             * 
+             * 
+             * örnek değişken tanımlamaları bu şekildedir kontrol ediniz.
 
 
 
