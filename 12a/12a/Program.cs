@@ -718,7 +718,7 @@ namespace _12a
              * 
              * 
              * örnek değişken tanımlamaları bu şekildedir kontrol ediniz.
-
+            */
 
 
             #endregion
