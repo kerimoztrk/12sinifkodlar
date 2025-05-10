@@ -5,6 +5,7 @@ using System.Data.SqlTypes;
 using System.Globalization;
 using System.IO.Pipes;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,107 @@ namespace _12a
     internal class Program
     {
 
-        static void Main(string[] args)
+
+        class Telefon2
+        {
+            public void aramaYap()
+            {
+                Console.WriteLine("nımara aranıyor");
+            }
+        }
+
+
+        class AkilliTelefon : Telefon2
+        {
+            public new void AramaYap()
+            {
+                Console.WriteLine("whatsap Araması yapılıyor.");
+            }
+        }
+
+        class Arac
+        {
+            public void hareketEt()
+            {
+                Console.WriteLine("Araç hareket ediyor.");
+            }
+        }
+
+        class araba2: Arac
+        {
+            public void CamAc()
+            {
+                Console.WriteLine("Arabanın camı açılıyor");
+            }
+        }
+        //Hiyerarşik kalıtım örneği
+        class Motosiklet : Arac
+        {
+            public void TekTekerSur()
+            {
+                Console.WriteLine("Motosiklet tek teker yaptı.");
+            }
+        }
+
+
+        
+
+
+
+        class Hayvan
+        {
+            public string Ad;
+            public void Sescİkar()
+            {
+                Console.WriteLine("Bir hayvan ses çıkardı.");
+            }
+        }
+
+        class Kedi : Hayvan
+        {
+            public void Miyavla()
+            {
+                Console.WriteLine("Miyavvvv!");
+            }
+        }
+
+
+        class Kopek : Hayvan 
+        {
+            public void Havla()
+            {
+                Console.WriteLine("Hav havv");
+            }
+        }
+
+
+        class Telefon
+        {
+            public string marka;
+            public int pilSeviyesi;
+
+            //yapıcı metot (constructor örneği)
+            public Telefon (string markAdi)
+            {
+                marka = markAdi;
+                pilSeviyesi = 100;
+                Console.WriteLine($"{marka} telefonu açıldı. Pil: {pilSeviyesi}%");
+            }
+
+
+            //Yıkıcı metot (destructor)
+            ~Telefon()
+            {
+                Console.WriteLine($"{marka} kapatıldı, hafıza temizlendi.");
+            }
+
+
+        }
+        public void Yazdir(int sayi)
+        {
+            Console.WriteLine(sayi);
+        }
+        static void Main(string[] a1rgs)
         {
 
             #region Yazdırma Komutları
@@ -862,11 +963,278 @@ namespace _12a
             #endregion
 
             #region oop
-            Ogrenci ogrenci = new Ogrenci();
+            //Ogrenci ogrenci = new Ogrenci();
 
-            ogrenci.BilgileriGoster();
+            //ogrenci.BilgileriGoster();
+
+
+            //metotlar 
+
+
+            //void SelamVer()
+            //{
+            //    Console.WriteLine("Merhaba!!");
+            //}
+
+
+            //Varsayılan Değerli Parametreler( Optional ParameterS)
+
+
+            //void SelamVer(string isim = " Ziyaretçi")
+            //{
+            //    Console.WriteLine("Merhaba "+isim);
+            //}
+
+            //SelamVer();
+            //SelamVer("Ali");
+
+
+            //isimlendirilmiş parametreler
+
+
+            //void BilgiYaz(string ad,int yas)
+            //{
+            //    Console.WriteLine($"Ad: {ad}, Yas: {yas}");
+            //}
+
+            //BilgiYaz("Ali", 145);
+
+            //BilgiYaz(yas:32, ad:"ahmet");
+
+
+
+            //PARAMAETRE DİZİLERİ PARAMS
+
+
+            //void SayilarıTopla(params int[] sayilar)
+            //{
+            //    int toplam = 0;
+
+            //    foreach (int sayi in sayilar)
+            //    {
+            //        toplam += sayi;
+            //    }
+            //    Console.WriteLine("Toplam="+ toplam);
+            //}
+
+            //SayilarıTopla(2,3,5,6,1,5234,234,234,234);
+            //SayilarıTopla(2, 3, 5, 6, 1, 5234, 234, 234, 234, 123, 213, 123, 123, 123, 12);
+
+
+            //metodu sonlandırma (return)
+
+
+            //int KareAl(int sayi)
+            //{
+            //    return sayi * sayi;
+            //}
+
+            //int sonuc = KareAl(5);
+            //Console.WriteLine(sonuc);
+
+
+
+
+            // method overloading ( Aşırı yükleeme)
+
+
+            //void Yazdir(string mesaj)
+            //{
+            //    Console.WriteLine(mesaj);
+            //}
+
+            //Yazdir("mesajjasasdaasd");
+
+
+
+
+
+
+
 
             #endregion
+
+
+            #region Constructor ve Destructor ( Yapıcı ve yıkıcı metot)
+
+
+
+            // Yapıcı metotlar  Constructor: bir sınıftan nesne oluşturulduğıunda çalışan özel bir metotdur.
+            // yapıcı metot sınıf adıyla aynı olmalı ve geriye değer döndürmemelidir.
+
+            //Telefon telefon1 = new Telefon("Samsung");
+            //Telefon telefon2 = new Telefon("Iphone");
+            //Telefon telefon3 = new Telefon("Xioami");
+
+
+
+
+            ////Yıkıcı Metotlar Destructor : Bir nesne ile işimiz bittiğinde hafızadan temizlenmesi gerekir. İşte Yıkıcı metolar yani destructorlar bu işlevi görür.
+            ////yıkıcı metot özellikleri;  - Tilde (~) işareti ile tanımlanır   -Parametre almaz - Geriye değer döndürmez.w
+
+
+
+
+
+            //// ref kullaıımı örenği mektuo gönderme
+            //void Degistir(ref int sayi)
+            //{
+            //    sayi += 10;
+            //}
+
+            //int x = 5;
+            //Degistir(ref x);
+            //Console.WriteLine(x);
+            ////burada x değerinin değişme sebebi referans olarak gönderilmesidir.
+
+
+
+
+            ////out kulllanımı
+
+            //void Hesapla(out int sonuc)
+            //{
+            //    sonuc = 100;
+            //}
+
+            //int notDegeri;
+            //Hesapla(out notDegeri);
+            //Console.WriteLine(notDegeri);
+
+            //bazı metotlar bieden fazla değer döndürmek isteyebilir.Bu durumda out parametresi kullanılarak bir değişkeni başlatmadan metoda gmnderebilriz.
+            //out kullanınca değişkenin ilk başta değer alması gerekmez.
+
+            #endregion
+
+            //kalıtıma giriş
+
+            #region KALITIM
+
+
+            //Kedi kedi1 = new Kedi();
+
+            //kedi1.Ad = "Boncuk";
+            //kedi1.Sescİkar();
+            //kedi1.Miyavla();
+
+
+            //Kopek kopek1= new Kopek();
+
+            //kopek1.Ad = "Karabaş";
+            //kopek1.Sescİkar();
+            //kopek1.Havla();
+
+
+
+            //Hiyararsik kalıtım
+            //araba2 araba1=new araba2);
+
+            //araba1.hareketEt();
+            //araba1.CamAc();
+
+
+            //Motosiklet motor1=new Motosiklet();
+            //motor1.hareketEt();
+            //motor1.TekTekerSur();
+
+
+            //new anahtar kelimesi ile metot gölgeleme
+
+            #endregion
+
+
+            #region Bir boyutlu diziler
+
+            //en temel haliyle dizi tanımı
+            //int[] sayiler = new int[5];
+
+            ////Diziler oluşturulurken tanımlama yapılabalir
+
+            //int[] sayilar2 = { 10, 20, 30, 40 };
+
+
+            ////new anahtar kelimesi ile değer atama
+
+            //int[] sayiler3 = new int []{ 10, 20, 30 };
+
+            ////bir boyutlu dizilerde değer aktarmaa
+
+            //int[] sayiler5 = new int[3];
+
+            //sayiler5[0] = 5;
+            //sayiler5[1] = 10;
+            //sayiler5[2] = 20;
+
+            //// Bir boyulu dizi elemanlarına erişim
+
+            int[] sayilar7 = { 5, 10, 15 };
+            //Console.WriteLine(sayilar7[2]);
+            //Console.WriteLine(sayilar7[2]);
+            //Console.WriteLine(sayilar7[2]);
+
+
+            //for (int i = 0;i < sayilar7.Length; i++)
+            //{
+            //    Console.WriteLine(sayilar7[i]);
+            //}
+
+
+            // ÖRNEK
+
+
+            //int[] notlar = { 60, 70, 80, 85, 90 };
+            //int toplam = 0;
+
+            //for (int i = 0; i < notlar.Length; i++)
+            //{
+            //    Console.WriteLine($"{i+1}. öğrencinin notu: {notlar[i]}");
+            //    toplam = toplam+ notlar[i];
+
+            //}
+
+            //int ortalama = toplam / notlar.Length;
+
+            //Console.WriteLine($"Sınıfın ortalaması: {ortalama}");
+
+            //dizilerde foreach döngüsü kullanımı
+
+            //string[] meyveler = { "Elma", "Armut", "Muz", "Kiraz" };
+
+
+            //foreach (string eleman in meyveler)
+            //{
+            //    Console.WriteLine(eleman);
+            //}
+
+
+            // Bir boyutlu dizilerde kullanılan özellikler ve metotlar
+
+
+            //length = dizinin eleman sayısını verir.
+
+            //Rank = Dizinin boyut sayısını verir ( tek boyutluysa her zaman 1 döner)
+
+
+            int[] sayilar12 = { 13, 26, 9, 12 };
+
+            Console.WriteLine("Eleman sayısını: "+ sayilar12.Length);
+            Console.WriteLine("Boyut Sayısı: " + sayilar12.Rank);
+
+            //Array.Sort() = bu fonksiyon diziyi küçükten büyüğe sıralar
+
+            Array.Sort(sayilar12);
+
+            foreach (int eleman in sayilar12)
+            {
+                Console.WriteLine(eleman);
+            }
+
+            #endregion
+
+
+
+
+            Console.ReadLine();
 
 
 
